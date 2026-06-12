@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upanshi Srivastava | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --primary: #6366f1;
+            --card: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        .dark {
+            --bg: #0f172a;
+            --text: #ffffff;
+            --primary: #818cf8;
+            --card: #1e293b;
+            --shadow: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: .3s;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            box-shadow: 0 2px 10px var(--shadow);
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .theme-btn {
+            position: absolute;
+            right: 40px;
+            border: none;
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: 8px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 60px 8%;
+            gap: 50px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 350px;
+            border-radius: 50%;
+            border: 6px solid var(--primary);
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+        }
+
+        .about p {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px var(--shadow);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        form {
+            max-width: 700px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+
+        form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        @media(max-width:900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .theme-btn {
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="themeBtn" class="theme-btn">🌙</button>
+
+    </nav>
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Hi, I'm
+                <span>Upanshi Srivastava</span>
+            </h1>
+
+            <p>
+                Full Stack Developer passionate about building impactful
+                software solutions using modern web technologies,
+                problem solving and scalable web applications.
+            </p>
+
+            <a href="#projects" class="btn">
+                View Projects
+            </a>
+
+        </div>
+
+    <div class="hero-image">
+    
+        <div class="code-card">
+    
+            <h3>Full Stack Developer</h3>
+    
+            <p>MERN Stack</p>
+    
+            <p>Problem Solver</p>
+    
+            <p>Open Source Enthusiast</p>
+    
+            <p>Building Impactful Solutions</p>
+    
+        </div>
+    
+    </div>
+
+    </section>
+
+    <section id="about" class="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <p>
+            I am Upanshi Srivastava, a Computer Science student passionate
+            about Full Stack Development, Data Structures & Algorithms,
+            Cloud Computing and building technology solutions that solve
+            real-world problems.
+
+            I enjoy creating scalable web applications with modern
+            technologies and continuously improving my technical skills.
+        </p>
+
+    </section>
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
+
+        <div class="project-grid">
+
+            <div class="card">
+
+                <h3>RiskShield</h3>
+
+                <p>
+                    Full-stack MERN insurance platform for gig workers
+                    featuring AI-powered risk prediction, fraud detection,
+                    claims management and automated payouts.
+                </p>
+
+                <div class="tech">
+                    MERN • MongoDB • Express • React • Node.js
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>AirAware</h3>
+
+                <p>
+                    Interactive pollution monitoring platform displaying
+                    real-time AQI levels, pollution hotspots, emission
+                    sources and air quality trends.
+                </p>
+
+                <div class="tech">
+                    React • APIs • Maps • Data Visualization
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>CareerOS</h3>
+
+                <p>
+                    Career preparation platform featuring resume analysis,
+                    interview preparation, learning roadmaps and placement
+                    readiness tracking.
+                </p>
+
+                <div class="tech">
+                    MERN • Analytics • Career Tools
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <form>
+
+            <input type="text" placeholder="Your Name">
+
+            <input type="email" placeholder="Your Email">
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+    <footer>
+
+        <h3>Upanshi Srivastava</h3>
+
+        <p>Full Stack Developer</p>
+
+        <p>© 2026 All Rights Reserved</p>
+
+    </footer>
+
+    <script>
+
+        const themeBtn = document.getElementById("themeBtn");
+
+        themeBtn.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                themeBtn.textContent = "☀️";
+                localStorage.setItem("theme", "dark");
+            } else {
+                themeBtn.textContent = "🌙";
+                localStorage.setItem("theme", "light");
+            }
+        });
+
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark");
+            themeBtn.textContent = "☀️";
+        }
+
+    </script>
+
+</body>
+
+</html>
